@@ -1,13 +1,16 @@
 package RH;
-
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 public class RH {
 
+    //Atributos
     private static String[] nomeSelecionados;
     private static double[] propostaSelecionados;
     private static int candidatosSelecionados;
 
-
+    //Métodos
     public static void analisandoCandidatos(String[] candidatos, double salarioPretendido[], double salarioBase){
+        System.out.printf("\n");
         for(int i = 0; i < salarioPretendido.length; i++) {
             System.out.printf("\n%s - Candidato número %d", candidatos[i], i+1);
             if (salarioBase > salarioPretendido[i]) {
@@ -52,9 +55,38 @@ public class RH {
     }
 
     public static void exibirSelecionados(){
-        System.out.printf("\nCandidatos Selecionados: ");
+        System.out.printf("\n\nCandidatos Selecionados: ");
         for(int i = 0; i < candidatosSelecionados; i++){
             System.out.printf("\n%s - Proposta Salarial = R$%.2f", nomeSelecionados[i], propostaSelecionados[i]);
+        }
+        System.out.printf("\n");
+    }
+
+    static boolean atender(){
+        return new Random().nextInt(3)==1;
+    }
+
+    public static void ligarSelecionados(){
+        for(int i = 0; i < candidatosSelecionados; i++){
+            int tentativas = 1;
+            boolean continuarTentando = true;
+            boolean atendeu = false;
+            do{
+                atendeu = atender();
+                continuarTentando = !atender();
+                if(continuarTentando)
+                    tentativas++;
+                //else
+                  //  System.out.printf("\nContato com selecionado realizado com sucesso!!");
+                //if(atendeu)
+                //    System.out.printf("\nCONSEGUIMOS CONTATO COM %s APÓS %d TENTATIVA(S)", nomeSelecionados[i], tentativas);
+                //else
+                 //   System.out.printf("\nNÃO CONSEGUIMOS CONTATO COM O %s", nomeSelecionados[i]);
+            }while(continuarTentando && tentativas < 3);
+            if(atendeu)
+                System.out.printf("\nCONSEGUIMOS CONTATO COM %s APÓS %d TENTATIVA(S)", nomeSelecionados[i], tentativas);
+            else
+            System.out.printf("\nNÃO CONSEGUIMOS CONTATO COM O %s", nomeSelecionados[i]);
         }
     }
 }

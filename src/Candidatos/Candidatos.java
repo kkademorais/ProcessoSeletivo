@@ -8,11 +8,12 @@ public class Candidatos {
     double[] propostaCandidatos;
 
     //Métodos
+        //Cria instância pra gerar as propostas salariais
     public Candidatos(){
         propostaCandidatos = new double[candidatos.length];
     }
 
-
+    //Acessa o array da instância da classe -> Acessa o array do objeto
     public void gerarProposta(){
         for(int i = 0; i < 10; i++){
             propostaCandidatos[i] = ThreadLocalRandom.current().nextDouble(1800, 2200);
@@ -25,7 +26,7 @@ public class Candidatos {
         }
     }
 
-    //Getters
+    //Getters -> acessar arrays fora da classe
     public String[] nomeCandidatos(){
         return candidatos;
     }
