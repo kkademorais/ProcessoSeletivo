@@ -9,7 +9,7 @@
 4. Selecionar os candidatos de acordo com a proposta salarial
 5. Exibir candidatos selecionados
 6. Ligar para os candidatos selecionados
-> Primeiro objeto utilizando conceitos de:
+> Primeiro projeto utilizando conceitos de:
 - Classe e Objeto
 - Métodos ⇒ Construtor e Getters
 - Encapsulamento
