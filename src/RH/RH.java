@@ -9,6 +9,7 @@ public class RH {
     private static int candidatosSelecionados;
 
     //Métodos
+        //Todos métodos estáticos => não precisa de construtor para inicializar o objeto
     public static void analisandoCandidatos(String[] candidatos, double salarioPretendido[], double salarioBase){
         System.out.printf("\n");
         for(int i = 0; i < salarioPretendido.length; i++) {
@@ -76,17 +77,11 @@ public class RH {
                 continuarTentando = !atender();
                 if(continuarTentando)
                     tentativas++;
-                //else
-                  //  System.out.printf("\nContato com selecionado realizado com sucesso!!");
-                //if(atendeu)
-                //    System.out.printf("\nCONSEGUIMOS CONTATO COM %s APÓS %d TENTATIVA(S)", nomeSelecionados[i], tentativas);
-                //else
-                 //   System.out.printf("\nNÃO CONSEGUIMOS CONTATO COM O %s", nomeSelecionados[i]);
             }while(continuarTentando && tentativas < 3);
             if(atendeu)
                 System.out.printf("\nCONSEGUIMOS CONTATO COM %s APÓS %d TENTATIVA(S)", nomeSelecionados[i], tentativas);
             else
-            System.out.printf("\nNÃO CONSEGUIMOS CONTATO COM O %s", nomeSelecionados[i]);
+                System.out.printf("\nNÃO CONSEGUIMOS CONTATO COM O %s", nomeSelecionados[i]);
         }
     }
 }

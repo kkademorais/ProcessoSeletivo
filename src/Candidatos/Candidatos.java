@@ -8,9 +8,9 @@ public class Candidatos {
     double[] propostaCandidatos;
 
     //Métodos
-        //Cria instância pra gerar as propostas salariais
+        //Construtor => inicializa os atributos do objeto
     public Candidatos(){
-        propostaCandidatos = new double[candidatos.length];
+        propostaCandidatos = new double[candidatos.length]; //Cria um array de tamanho equivalente ao número de candidatos
     }
 
     //Acessa o array da instância da classe -> Acessa o array do objeto
@@ -27,19 +27,11 @@ public class Candidatos {
     }
 
     //Getters -> acessar arrays fora da classe
-    public String[] nomeCandidatos(){
+    public String[] getNomeCandidatos(){
         return candidatos;
     }
 
-    public double[] propostaCandidatos(){
+    public double[] getPropostaCandidatos(){
         return propostaCandidatos;
     }
-
-
-
-    /*public static double valorPretendido() {
-    //    return ThreadLocalRandom.current().nextDouble(1800, 2200);
-    }*/
 }
-
-

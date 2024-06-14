@@ -14,8 +14,8 @@ public class ProcessoSeletivo {
         candidatos.exibirProposta();
 
 
-        RH.analisandoCandidatos(candidatos.nomeCandidatos(), candidatos.propostaCandidatos(), salarioBase);
-        RH.selecionandoCandidatos(candidatos.nomeCandidatos(), salarioBase, candidatos.propostaCandidatos());
+        RH.analisandoCandidatos(candidatos.getNomeCandidatos(), candidatos.getPropostaCandidatos(), salarioBase);
+        RH.selecionandoCandidatos(candidatos.getNomeCandidatos(), salarioBase, candidatos.getPropostaCandidatos());
         RH.exibirSelecionados();
         RH.ligarSelecionados();
     }
